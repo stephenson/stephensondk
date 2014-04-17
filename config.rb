@@ -5,7 +5,7 @@ set :relative_links, true
 activate :livereload
 
 activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = 'stephenson.dk' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.bucket                     = 'www.stephenson.dk' # The name of the S3 bucket you are targetting. This is globally unique.
   s3_sync.region                     = 'eu-west-1'     # The AWS region for your bucket.
   s3_sync.delete                     = true # We delete stray files by default.
   s3_sync.after_build                = false # We do not chain after the build step by default. 
