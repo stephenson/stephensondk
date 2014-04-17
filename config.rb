@@ -1,3 +1,9 @@
+require "susy"
+
+
+set :relative_links, true
+activate :livereload
+
 ###
 # Compass
 ###
