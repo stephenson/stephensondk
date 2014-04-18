@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+echo "Chekking git branch..."
+
+if ! git branch | grep "* master"
+then
+  echo "Can only release from master branch"
+  exit 1
+fi
+
+echo "Okay"
+
+echo "Getting ready to build..."
+
+bundle exec middleman build
+
+echo "Build done, S3 sync in progress..."
+
+bundle exec middleman s3_sync --force
+
+echo "Deploy done!"
