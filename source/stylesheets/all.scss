@@ -1,1 +1,61 @@
 @import "susy";
+
+$media-layout: 12;
+
+$container-style: fluid;
+
+
+body {
+  @include container(100%);
+
+  .content {
+    @include span-columns(10 omega, $media-layout);
+    @include prefix(1);
+    @include suffix(1);
+
+    @include at-breakpoint($media-layout) {
+      @include span-columns(7, $media-layout);
+    }
+
+    h1 {
+      font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+      font-weight: 700;
+      font-size: 50px;
+      font-style: normal;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.5;
+      font-size: 20px;
+      letter-spacing: .01rem;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+
+      color: #333332;
+    }
+  }
+  .left {
+    display: none;
+
+    @include at-breakpoint($media-layout) {
+      display: block;
+
+      width: columns(3, $media-layout);
+
+      border-left: 1px solid #ece6da;
+      background-color: #f8f5f0;
+  
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: auto;
+    }
+    
+  }
+}
