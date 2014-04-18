@@ -1,6 +1,7 @@
 @import "susy";
 
 $media-layout: 12;
+$breakpoint  : 12;
 
 $container-style: fluid;
 
@@ -13,7 +14,7 @@ body {
     @include prefix(1);
     @include suffix(1);
 
-    @include at-breakpoint($media-layout) {
+    @include at-breakpoint($breakpoint) {
       @include span-columns(7, $media-layout);
     }
 
@@ -42,7 +43,7 @@ body {
   .left {
     display: none;
 
-    @include at-breakpoint($media-layout) {
+    @include at-breakpoint($breakpoint) {
       display: block;
 
       width: columns(3, $media-layout);
