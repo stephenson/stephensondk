@@ -9,7 +9,68 @@ $container-style: fluid;
 body {
   @include container(100%);
 
+  header {
+    margin-top: 10px;
+
+    .title {
+      @include prefix(1);
+      @include span-columns(5, $media-layout);
+
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(3, $media-layout);
+      }
+
+      h1 {
+        font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+        font-weight: 400;
+        letter-spacing: .01rem;
+  
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+  
+        color: #333332;
+  
+        font-size: 25px;
+      }
+    }
+
+    nav {
+      @include span-columns(5 omega, $media-layout);
+      @include suffix(1);
+
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(4, $media-layout);
+      }
+
+      ol {
+        float: right;
+        list-style: none;
+
+        li {
+          float: left;
+
+          margin: 10px;
+
+          a {
+            color: lighten(#333332, 50);
+            text-decoration: none;
+
+            &:hover {
+              color: #333332;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
   .content {
+    margin-top: 30px;
+
     @include span-columns(10 omega, $media-layout);
     @include prefix(1);
     @include suffix(1);
@@ -39,6 +100,14 @@ body {
 
       color: #333332;
     }
+
+    .large-image {
+      @include bleed(2);
+
+      height: 300px;
+
+      background-color: #ccc;
+    }
   }
   .left {
     display: none;
@@ -46,7 +115,7 @@ body {
     @include at-breakpoint($breakpoint) {
       display: block;
 
-      width: columns(3, $media-layout);
+      width: 24.1%;
 
       border-left: 1px solid #ece6da;
       background-color: #f8f5f0;
