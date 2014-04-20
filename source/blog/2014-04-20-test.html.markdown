@@ -1,0 +1,7 @@
+---
+title: test
+date: 2014-04-20 16:40 UTC
+tags:
+nav_class: "sidebar"
+---
+

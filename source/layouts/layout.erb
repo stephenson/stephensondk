@@ -1,37 +1,5 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    
-    <!-- Always force latest IE rendering engine or request Chrome Frame -->
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title><%= current_page.data.title || ""%>Niklas Stephenson</title>
-    
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
-  </head>
-  
-  <body>
-    <header>
-      <div class="title">
-        <h1>Niklas Stephenson</h1>
-      </div>
-      <nav>
-        <ol>
-          <li><a href="/">Home</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/adventures/">Adventures</a></li>
-          <li><a href="/about/">About</a></li>
-        </ol>
-      </nav>
-    </header>
-    <div class="content">
-      <%= yield %>
-    </div>
-    <div class="left">
-      Stuff
-    </div>
-  </body>
-</html>
+<% wrap_layout :base do %>
+  <div class="content">
+    <%= yield %>
+  </div>
+<% end %>

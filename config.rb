@@ -24,11 +24,25 @@ end
 activate :blog do |blog|
   blog.name = "blog"
   blog.prefix = "blog"
+  blog.layout = "blog"
+
+  blog.permalink = "{year}/{title}"
+
+  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
+
+  blog.sources = "{year}-{month}-{day}-{title}.html"
 end
 
 activate :blog do |blog|
   blog.name = "adventures"
   blog.prefix = "adventures"
+  blog.layout = "adventures"
+
+  blog.permalink = "{year}/{title}"
+
+  blog.summary_separator = /SPLIT_SUMMARY_BEFORE_THIS/
+
+  blog.sources = "{year}-{month}-{day}-{title}.html"
 end
 
 ###
