@@ -2,6 +2,7 @@ require "susy"
 
 ::Compass.configuration.sass_options = { :quiet => true }
 
+activate :directory_indexes
 
 set :relative_links, true
 activate :livereload
@@ -16,6 +17,18 @@ activate :s3_sync do |s3_sync|
   s3_sync.reduced_redundancy_storage = false
   s3_sync.acl                        = 'public-read'
   s3_sync.encryption                 = false
+end
+
+# Blogging
+
+activate :blog do |blog|
+  blog.name = "blog"
+  blog.prefix = "blog"
+end
+
+activate :blog do |blog|
+  blog.name = "adventures"
+  blog.prefix = "adventures"
 end
 
 ###
