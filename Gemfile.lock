@@ -94,6 +94,8 @@ GEM
       middleman-core (>= 3.0.2)
       multi_json (~> 1.0)
       rack-livereload
+    middleman-minify-html (3.1.1)
+      middleman-core (~> 3.0)
     middleman-s3_sync (3.0.25)
       colorize
       fog (>= 1.10.1)
@@ -167,6 +169,7 @@ DEPENDENCIES
   middleman (~> 3.3.2)
   middleman-blog
   middleman-livereload (~> 3.1.0)
+  middleman-minify-html
   middleman-s3_sync
   susy
   tzinfo-data

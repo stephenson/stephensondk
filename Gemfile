@@ -7,6 +7,9 @@ gem "middleman", "~>3.3.2"
 # Deploy: https://github.com/fredjean/middleman-s3_sync
 gem 'middleman-s3_sync'
 
+# Minify HTML
+gem "middleman-minify-html"
+
 # Blogging
 gem "middleman-blog"
 
