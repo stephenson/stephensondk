@@ -1,8 +1,19 @@
+@import "compass";
 @import "susy";
 
-$media-layout: 12;
-$breakpoint  : 12;
+// Colors
+$border         : #ece6da;
+$text           : #333332;
+$sidebar-bg     : #f8f5f0;
+$green          : #50b26d;
 
+// Fonts
+$headline       : "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+$body           : "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+
+// Susy config
+$media-layout   : 12;
+$breakpoint     : 12;
 $container-style: fluid;
 
 
@@ -10,15 +21,18 @@ body {
   @include container(100%);
 
   h1 {
-    font-family: "jaf-bernino-sans","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    font-family: $headline;
     font-weight: 700;
     font-size: 50px;
     font-style: normal;
     letter-spacing: -0.05em;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   p {
-    font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+    font-family: $body;
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
@@ -28,7 +42,39 @@ body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 
-    color: #333332;
+    color: $text;
+  }
+
+  a {
+    color: darken($text, 10%);
+
+    &:hover {
+      color: lighten($text, 10%);
+    }
+  }
+
+  input {
+    border: 1px solid $border;
+    padding: 8px;
+    @include border-radius(3px);
+
+    font-family: $body;
+    color: $text;
+    font-size: 90%;
+
+    &.button {
+      border: none;
+
+      background-color: $green;
+
+      color: #fff;
+      @include text-shadow(darken($green, 20%) 1px 1px 0);
+      font-family: $headline;
+      font-weight: 400;
+  
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
   }
 
   .large-image {
@@ -51,14 +97,14 @@ body {
       }
 
       h1 {
-        font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+        font-family: $body;
         font-weight: 400;
         letter-spacing: .01rem;
   
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
   
-        color: #333332;
+        color: $text;
   
         font-size: 25px;
       }
@@ -87,11 +133,11 @@ body {
           margin: 10px;
 
           a {
-            color: lighten(#333332, 50);
+            color: lighten($text, 50);
             text-decoration: none;
 
             &:hover {
-              color: #333332;
+              color: $text;
             }
           }
 
@@ -129,14 +175,38 @@ body {
 
       width: 24.1%;
 
-      border-left: 1px solid #ece6da;
-      background-color: #f8f5f0;
+      border-left: 1px solid $border;
+      background-color: $sidebar-bg;
   
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: auto;
+
+      h2 {
+        font-size: 130%;
+        font-family: "freight-text-pro",Georgia,Cambria,"Times New Roman",Times,serif;
+
+        color: lighten($text, 10%);
+        margin-bottom: 0;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 95%;
+      }
+
+      .profile {
+        margin-top: 20px;
+      }
+
+      .profile, .newsletter {
+        text-align: center;
+        padding: 20px;
+
+        border-bottom: 1px solid #ece6da;
+      }
     }
     
   }
