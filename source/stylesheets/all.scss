@@ -29,6 +29,10 @@ body {
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   p {
@@ -169,6 +173,7 @@ body {
   }
   .content {
     margin-top: 30px;
+    margin-bottom: 50px;
 
     @include span-columns(10 omega, $media-layout);
     @include prefix(1);
@@ -177,6 +182,7 @@ body {
 
   .left {
     margin-top: 30px;
+    margin-bottom: 50px;
 
     @include span-columns(10 omega, $media-layout);
     @include prefix(1);
@@ -220,6 +226,12 @@ body {
         margin-top: 20px;
       }
 
+      .newsletter {
+        h2 {
+          margin-top: 0;
+        }
+      }
+
       .profile, .newsletter {
         text-align: center;
         padding: 20px;
@@ -260,6 +272,12 @@ body {
         @include span-columns(4 omega, $media-layout);
         @include prefix(1);
         @include suffix(1);
+      }
+    }
+
+    ol {
+      li {
+        margin: 10px;
       }
     }
   }
