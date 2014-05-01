@@ -9,6 +9,10 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || ""%>Niklas Stephenson</title>
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <% css_path = sitemap.resources.select { |p| p.source_file.match(/all[.]scss$/) }.first %>
+    <style>
+      <%= css_path.render %>
+    </style>
   </head>
   
   <body class="<%= page_classes %>">
@@ -28,6 +32,4 @@
     <%= yield %>
   </body>
 </html>
-
-<%= stylesheet_link_tag "normalize", "all" %>
-<%= javascript_include_tag  "all" %>
+<%= stylesheet_link_tag "normalize" %>

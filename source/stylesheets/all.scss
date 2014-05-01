@@ -53,6 +53,19 @@ body {
     }
   }
 
+  blockquote {
+    font-size: 140%;
+    color: lighten($text, 50%);
+    font-family: $body;
+    font-style: italic;
+
+    border-left: 4px solid $green;
+    margin-left: 0;
+
+    padding: 5px;
+    padding-left: 15px;
+  }
+
   input {
     border: 1px solid $border;
     padding: 8px;
@@ -78,11 +91,17 @@ body {
   }
 
   .large-image {
-    @include bleed(2);
+    display: inline-block;
 
-    height: 300px;
+    float: left;
+    width: 100%+gutter(1)+gutter(1);
+    margin-left: - gutter(1);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 
-    background-color: #ccc;
+  img {
+      max-width: 100%;
   }
 
   header {
@@ -209,6 +228,40 @@ body {
       }
     }
     
+  }
+
+  &.index {
+    .intro {
+      @include span-columns(12 omega, $media-layout);
+
+      border-bottom: 1px solid $border;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+
+      text-align: center;
+
+      p {
+        font-size: 150%;
+        @include prefix(2);
+        @include suffix(2);
+      }
+    }
+
+    .blog {
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(4, $media-layout);
+        @include prefix(1);
+        @include suffix(1);
+      }
+    }
+
+    .adventures {
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(4 omega, $media-layout);
+        @include prefix(1);
+        @include suffix(1);
+      }
+    }
   }
 
   &.about_index {

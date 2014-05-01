@@ -1,7 +1,24 @@
----
-title: Deep blue
----
-<h1><%= lorem.words 5 %></h1>
-<p><%= lorem.paragraphs 2 %></p>
+<div class="intro">
+  <%= image_tag 'frontpage.png' %>
+  <p>Executor, productdesigner and co-founder of <a href="https://www.firmafon.dk">Firmafon</a>. Love great produtcs and fanatic customer service.</p>
+</div>
 
-<p><%= lorem.paragraphs 1 %></p>
+<div class="blog">
+  <h2>Blog posts</h2>
+  <p>Blog Posts about life, startups and general notes where i empty my brian.</p>
+  <ol>
+    <% blog("blog").articles[0...5].each do |article| %>
+      <li><a href="<%= article.url %>"><%= article.title %></a></li>
+    <% end %>
+  </ol>
+</div>
+
+<div class="adventures">
+  <h2>Adventures</h2>
+  <p>The latest blogpost I have written about adventure motorcycling and my own trips.</p>
+  <ol>
+    <% blog("adventures").articles[0...5].each do |article| %>
+      <li><a href="<%= article.url %>"><%= article.title %></a></li>
+    <% end %>
+  </ol>
+</div>

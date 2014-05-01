@@ -36,7 +36,7 @@ end
 activate :blog do |blog|
   blog.name = "adventures"
   blog.prefix = "adventures"
-  blog.layout = "adventures"
+  blog.layout = "blog"
 
   blog.permalink = "{year}/{title}"
 
@@ -94,6 +94,10 @@ end
 #   end
 # end
 
+compass_config do |config|
+  config.output_style = :compressed
+end
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
@@ -101,7 +105,10 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 # Build-specific configuration
+default_caching_policy max_age:(60 * 60 * 24 * 365)
 configure :build do
+  default_caching_policy max_age:(60 * 60 * 24 * 365)
+  
   # For example, change the Compass output style for deployment
   activate :minify_css
 

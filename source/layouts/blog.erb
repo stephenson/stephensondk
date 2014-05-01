@@ -1,9 +1,32 @@
 <% wrap_layout :base do %>
   <div class="left">
+    <% if current_page.data.title %>
+      <h1><%= current_page.data.title %></h1>
+    <% end %>
     <%= yield %>
   </div>
   
   <div class="right">
-    Blog sidebar
+    <div class="profile">
+      <%= image_tag 'profile.png' %>
+      <h2>Niklas Stephenson</h2>
+      <p>Executor, productdesigner and co-founder of <a href="https://www.firmafon.dk">Firmafon</a>. Love great produtcs and fanatic customer service.</p>
+    </div>
+    <div class="newsletter">
+      <h2>Like what you read?</h2>
+      <p>Sign up to my newsletter and get a simple e-mail when I post new stuff.</p>
+      <!-- Begin MailChimp Signup Form -->
+      <form action="http://stephenson.us3.list-manage1.com/subscribe/post?u=8caf3a694f2ed844ae8e4c4c1&amp;id=a7cfc4438d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+
+        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="E-mail adress">
+
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_8caf3a694f2ed844ae8e4c4c1_a7cfc4438d" value=""></div>
+  
+        <input class="button" type="submit" value="Subscribe" name="subscribe">
+      </form>
+
+      <!--End mc_embed_signup-->
+    </div>
+    
   </div>
 <% end %>
