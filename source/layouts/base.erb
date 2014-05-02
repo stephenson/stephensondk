@@ -4,10 +4,6 @@
     <meta charset="utf-8">
     <title><%= current_page.data.title || ""%>Niklas Stephenson</title>
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <% css_path = sitemap.resources.select { |p| p.source_file.match(/all[.]scss$/) }.first %>
-    <style>
-      <%= css_path.render %>
-    </style>
   </head>
   
   <body class="<%= page_classes %>">
@@ -25,6 +21,6 @@
       </nav>
     </header>
     <%= yield %>
-    <%= stylesheet_link_tag "normalize" %>
+    <%= stylesheet_link_tag "normalize", "all" %>
   </body>
 </html>

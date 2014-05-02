@@ -94,10 +94,6 @@ end
 #   end
 # end
 
-compass_config do |config|
-  config.output_style = :compressed
-end
-
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
