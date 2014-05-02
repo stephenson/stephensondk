@@ -51,10 +51,19 @@ body {
 
   a {
     color: darken($text, 10%);
+  }
 
-    &:hover {
-      color: lighten($text, 10%);
-    }
+  .read-more {
+    font-weight: bold;
+  }
+
+  time {
+    margin: 0;
+    padding: 0;
+
+    font-style: italic;
+    color: lighten($text, 50%);
+    font-size: 95%;
   }
 
   blockquote {
@@ -91,6 +100,10 @@ body {
   
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
+
+      &:hover {
+        background-color: darken($green, 4%);
+      }
     }
   }
 
@@ -143,8 +156,6 @@ body {
           @include span-columns(4, $media-layout);
         }
       }
-
-
 
       ol {
         float: right;
