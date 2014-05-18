@@ -12,12 +12,15 @@
         <h1>Niklas Stephenson</h1>
       </div>
       <nav class="<%= current_page.data.nav_class %>">
-        <ol>
+        <ol class="full">
           <li><a href="/">Home</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/adventures/">Adventures</a></li>
           <li><a href="/about/">About</a></li>
         </ol>
+        <ol class="small">
+          <li><a href="/menu/">Menu</a></li>
+        </div>
       </nav>
     </header>
     <%= yield %>

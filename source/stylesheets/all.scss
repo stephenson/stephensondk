@@ -126,10 +126,10 @@ body {
 
     .title {
       @include prefix(1);
-      @include span-columns(5, $media-layout);
+      @include span-columns(7, $media-layout);
 
       @include at-breakpoint($breakpoint) {
-        @include span-columns(3, $media-layout);
+        @include span-columns(5, $media-layout);
       }
 
       h1 {
@@ -149,7 +149,11 @@ body {
     nav {
       @include suffix(1);
 
-      @include span-columns(5 omega, $media-layout);
+      @include span-columns(3 omega, $media-layout);
+
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(5 omega, $media-layout);
+      }
 
       &.sidebar {
         @include at-breakpoint($breakpoint) {
@@ -157,7 +161,23 @@ body {
         }
       }
 
-      ol {
+      .small {
+        display: block;
+
+        @include at-breakpoint($breakpoint) {
+          display: none;
+        }
+      }
+
+      .full {
+        display: none;
+
+        @include at-breakpoint($breakpoint) {
+          display: block;
+        }
+      }
+
+      .full, .small {
         float: right;
         list-style: none;
 
@@ -293,6 +313,36 @@ body {
     }
   }
 
+  &.menu {
+
+    .navigation {
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        padding: 20px;
+        margin: 0;
+        border-bottom: 1px solid $border;
+        text-align: center;
+
+        &:first-child {
+          border-top: 1px solid $border;
+        }
+
+        a {
+          color: lighten($text, 50);
+          text-decoration: none;
+          font-size: 120%;
+    
+          &:hover {
+            color: $text;
+          }
+        }
+      }
+    }
+    
+  }
   &.about_index {
     @include at-breakpoint($breakpoint) {
       background-color: #fcfcfc;
