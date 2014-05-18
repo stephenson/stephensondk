@@ -132,6 +132,12 @@ body {
         @include span-columns(5, $media-layout);
       }
 
+      &.sidebar {
+        @include at-breakpoint($breakpoint) {
+          @include span-columns(3, $media-layout);
+        }
+      }
+
       h1 {
         font-family: $body;
         font-weight: 400;
