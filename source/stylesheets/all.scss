@@ -23,9 +23,13 @@ body {
   h1 {
     font-family: $headline;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 30px;
     font-style: normal;
     letter-spacing: -0.05em;
+
+    @include at-breakpoint($breakpoint) {
+      font-size: 50px;
+    }    
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -40,8 +44,12 @@ body {
     font-weight: 400;
     font-style: normal;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: .01rem;
+
+    @include at-breakpoint($breakpoint) {
+      font-size: 20px;
+    }  
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -147,8 +155,11 @@ body {
         text-rendering: optimizeLegibility;
   
         color: $text;
-  
-        font-size: 25px;
+        
+        font-size: 22px;
+        @include at-breakpoint($breakpoint) {
+          font-size: 25px;
+        }
       }
     }
 
@@ -169,6 +180,7 @@ body {
 
       .small {
         display: block;
+        margin-top: 10px;
 
         @include at-breakpoint($breakpoint) {
           display: none;
@@ -290,9 +302,13 @@ body {
       text-align: center;
 
       p {
-        font-size: 150%;
-        @include prefix(2);
-        @include suffix(2);
+        font-size: 120%;
+
+        @include at-breakpoint($breakpoint) {
+          font-size: 150%;
+          @include prefix(2);
+          @include suffix(2);
+        }
       }
     }
 
