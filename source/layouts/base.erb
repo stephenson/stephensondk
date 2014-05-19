@@ -4,11 +4,21 @@
     <meta charset="utf-8">
     <title><%= current_page.data.title || "Niklas Stephenson"%></title>
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <% if is_blog_article? %>
+      <meta name="description" content="<%= current_page.data.description %>">
+      <meta property="og:title" content="<%= current_page.data.title || "Niklas Stephenson"%>"/>
+      <meta property="og:site_name" content="Niklas Stephenson"/>
+      <meta property="og:url" content="http://stephenson.dk<%= current_page.url %>" />
+      <meta property="og:description" content="<%= current_page.data.description %>" />
+      <meta property="og:type" content="article" />
+      <meta property="article:author" content="https://www.facebook.com/niklas.stephenson" />
+      <meta property="og:image" content="<%= current_page.data.image %>" />
+    <% end %>
   </head>
   
   <body class="<%= page_classes %>">
     <header>
-      <div class="title <%= current_page.data.nav_class %>">
+      <div class="title<% if is_blog_article? %> sidebar<% end %>">
         <h1>Niklas Stephenson</h1>
       </div>
       <nav class="<%= current_page.data.nav_class %>">
