@@ -17,7 +17,7 @@
   
   <body class="<%= page_classes %>">
     <header>
-      <div class="title<% if is_blog_article? %> sidebar<% end %>">
+      <div class="title <%= current_page.data.nav_class %>">
         <h1>Niklas Stephenson</h1>
       </div>
       <nav class="<%= current_page.data.nav_class %>">
