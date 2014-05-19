@@ -147,6 +147,13 @@ body {
       max-width: 100%;
   }
 
+  article {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+
+    border-bottom: 1px solid $border;
+  }
+
   header {
     margin-top: 10px;
 
