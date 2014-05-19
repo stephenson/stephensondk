@@ -54,10 +54,10 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 
 # Build-specific configuration
-default_caching_policy max_age:(60 * 60 * 24 * 365)
+default_caching_policy max_age:(60 * 60 * 3)
 
 configure :build do
-  default_caching_policy max_age:(60 * 60 * 24 * 365)
+  default_caching_policy max_age:(60 * 60 * 3)
   
   # For example, change the Compass output style for deployment
   activate :minify_css
