@@ -27,6 +27,8 @@ body {
     font-style: normal;
     letter-spacing: -0.05em;
 
+    margin-bottom: 15px;
+
     @include at-breakpoint($breakpoint) {
       font-size: 50px;
     }    
@@ -36,6 +38,8 @@ body {
 
     a {
       text-decoration: none;
+      font-family: $headline;
+      font-weight: 700;
     }
   }
 
@@ -70,11 +74,13 @@ body {
   }
 
   a {
-    color: darken($text, 10%);
-  }
+    color: $text;
+    font-family: $body;
+    font-weight: 400;
 
-  .read-more {
-    font-weight: bold;
+    &:hover {
+      color: lighten($text, 10%);
+    }
   }
 
   time {
