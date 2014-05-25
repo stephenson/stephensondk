@@ -391,6 +391,18 @@ body {
     }
     
   }
+
+  &.adventures_getting-started {
+    #getting-started-brspan-classsmall-subwith-adventure-motorcyclingspan {
+      line-height: 0.9em;
+      .small-sub {
+        font-size: 0.6em;
+        color: lighten($text, 40%);
+      }
+    }
+    
+  }
+
   &.about_index {
     @include at-breakpoint($breakpoint) {
       background-color: #fcfcfc;
