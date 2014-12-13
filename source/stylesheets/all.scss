@@ -105,6 +105,25 @@ body {
     padding-left: 15px;
   }
 
+  .blog-image {
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    .description-bottom {
+      background-color: lighten($sidebar-bg,2);
+      border-bottom: 1px solid lighten($border,2);
+      border-left: 1px solid lighten($border,2);
+      border-right: 1px solid lighten($border,2);
+      margin-top: -5px;
+
+      p {
+        margin: 0;
+        font-size: 0.95em;
+        padding: 10px;
+      }
+    }
+  }
+
   input {
     border: 1px solid $border;
     padding: 8px;
