@@ -16,6 +16,8 @@ gem "middleman-blog"
 #Frontend
 gem "susy", "1.0.9"
 
+gem "middleman-imageoptim", "~> 0.1.4"
+
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
