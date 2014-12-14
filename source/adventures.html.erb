@@ -1,9 +1,11 @@
 ---
 layout: "blog"
 nav_class: "sidebar"
+pageable: true
+per_page: 5
 ---
 
-<% blog("adventures").articles[0...5].each do |article| %>
+<% page_articles.each do |article| %>
   <article>
     <h1><a href="<%= article.url %>"><%= article.title %></a></h1>
     <time>Published on <%= article.date.strftime('%b %e %Y') %></time>
@@ -12,4 +14,12 @@ nav_class: "sidebar"
     
     <a href="<%= article.url %>" class="read-more">Read more...</a>
   </article>
+<% end %>
+
+<% if next_page %>
+  <a href="<%= next_page.url %>">Next page</a>
+<% end %>
+
+<% if prev_page %>
+  <a href="<%= prev_page.url %>">Previous page</a>
 <% end %>

@@ -37,6 +37,9 @@ activate :blog do |blog|
   blog.name = "adventures"
   blog.prefix = "adventures"
   blog.layout = "blog"
+  blog.paginate = true
+  blog.page_link = "page-{num}"
+  blog.per_page = 5
 
   blog.permalink = "{year}/{title}"
 
@@ -44,6 +47,11 @@ activate :blog do |blog|
 
   blog.sources = "{year}-{month}-{day}-{title}.html"
 end
+
+# Sitemap.xml
+set :url_root, 'http://www.stephenson.dk'
+
+activate :search_engine_sitemap
 
 # Assets
 
