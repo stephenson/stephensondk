@@ -14,7 +14,7 @@ gem "middleman-minify-html"
 gem "middleman-blog"
 
 #Frontend
-gem "susy"
+gem "susy", "1.0.9"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
