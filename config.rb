@@ -61,8 +61,6 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-activate :imageoptim
-
 # Build-specific configuration
 default_caching_policy max_age:(60 * 60 * 3)
 
