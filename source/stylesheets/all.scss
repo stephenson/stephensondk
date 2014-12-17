@@ -338,7 +338,9 @@ body {
 
   &.index {
     .intro {
-      @include span-columns(12 omega, $media-layout);
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(8, $media-layout);
+      }
 
       border-bottom: 1px solid $border;
       padding-bottom: 40px;
@@ -346,22 +348,25 @@ body {
 
       text-align: center;
 
+      @include at-breakpoint($breakpoint) {
+        @include span-columns(8, $media-layout);
+        border-bottom: none;
+      }
+
       p {
         font-size: 120%;
 
         @include at-breakpoint($breakpoint) {
           font-size: 150%;
-          @include prefix(2);
-          @include suffix(2);
+          @include prefix(1);
+          @include suffix(1);
         }
       }
     }
 
     .adventures {
       @include at-breakpoint($breakpoint) {
-        @include span-columns(6 omega, $media-layout);
-        @include prefix(3);
-        @include suffix(3);
+        @include span-columns(4 omega, $media-layout);
       }
     }
 
