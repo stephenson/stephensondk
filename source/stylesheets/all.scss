@@ -357,19 +357,11 @@ body {
       }
     }
 
-    .blog {
-      @include at-breakpoint($breakpoint) {
-        @include span-columns(4, $media-layout);
-        @include prefix(1);
-        @include suffix(1);
-      }
-    }
-
     .adventures {
       @include at-breakpoint($breakpoint) {
-        @include span-columns(4 omega, $media-layout);
-        @include prefix(1);
-        @include suffix(1);
+        @include span-columns(6 omega, $media-layout);
+        @include prefix(3);
+        @include suffix(3);
       }
     }
 
